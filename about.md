@@ -4,7 +4,7 @@ title: 关于
 permalink: /about/
 ---
 
-本站代码地址:<https://github.com/runphp/runphp.github.io>
+本站代码地址:<https://github.com/runphp/blog.runphp.net>
 
 ## 联系方式
 - email: runphp@qq.com
