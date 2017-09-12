@@ -1,0 +1,18 @@
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var clientId = '21e3b2f4069839fbc2ea'
+    var clientSecret = '46c93b0e0e278eef77eaad692db80af844ef64eb'
+    var gitment = new Gitment({
+        id: '{{ page.id }}',
+        owner: 'runphp',
+        repo: 'blog.runphp.net',
+        oauth: {
+            client_id: clientId,
+            client_secret: clientSecret,
+        },
+    });
+
+    gitment.render('container');
+</script>
