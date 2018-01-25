@@ -8,7 +8,7 @@ tags: 泰戈尔
 ---
 
 I asked nothing  | 我一无所求
------|---
+:-----|:-----
 I asked nothing, only stood at the edge of the wood behind the tree.  | 我一无所求，只站在林边树后。
 Languor was still upon the eyes of the dawn, and the dew in the air. | 倦意还逗留在黎明的眼上，露润在空气里。
 The lazy smell of the damp grass hung in the thin mist above the earth. | 湿草的懒味悬垂在地面的薄雾中。
@@ -25,3 +25,4 @@ The dust was raised in the road from the hoofs of the driven cattle. | 街尘在
 With the gurgling pitchers at their hips, women came from the river. | 把汩汩发响的水瓶搂在腰上，女人们从河边走来。
 Your bracelets were jingling, and foam brimming over the jar. | 你的钏镯丁当，乳沫溢出罐沿。
 The morning wore on and I did not come near you. | 晨光渐逝而我没有步近你。
+{: class="table table-bordered table-hover"}
