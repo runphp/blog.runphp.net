@@ -2,7 +2,7 @@
 layout: post
 title:  "programmatically方式安装composer"
 author: runphp
-date:   20167-09-16 10:24:01 +0800
+date:   2016-09-16 10:24:01 +0800
 category: php
 tags: composer sh
 ---
