@@ -20,6 +20,9 @@ markdown: kramdown
 kramdown:
   input:          GFM
 exclude:      [".idea"]
+sass:
+  sass_dir: _sass
+  style: compressed
 defaults:
   scope:
     path: ""
