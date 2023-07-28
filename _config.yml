@@ -11,7 +11,7 @@ email: runphp@qq.com
 description: > # this means to ignore newlines until "baseurl:"
   不积跬步无以至千里，不积小流无以成江海，学习工作生活中的点滴记录。
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://blog.runphp.net" # the base hostname & protocol for your site
+url: "https://blog.runphp.net" # the base hostname & protocol for your site
 github_username: runphp
 permalink: /:categories/:year-:month-:day-:title.html
 paginate: 10
@@ -20,6 +20,12 @@ markdown: kramdown
 kramdown:
   input:          GFM
 exclude:      [".idea"]
-gems:
+defaults:
+  scope:
+    path: ""
+    type: "posts"
+  values:
+    layout: "post"
+plugins:
   - jekyll-paginate
   - jekyll-gist
