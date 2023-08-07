@@ -1,10 +1,3 @@
-# blog.runphp.net
+# blog.runphp.net 站点代码
 
-该博客部署在github上但是也可以通过docker进行部署
-
-windows示例
-```
-docker run -t --rm -v d:/workspace/php/blog.runphp.net:/usr/src/app -p "4000:4000" -d --name=github-pages starefossen/github-pages
-```
-
-访问地址 <http://localhost:4000>
+本博客使用Jekyll技术，在Github Pages上部署，在此谢谢Github提供的免费服务。
