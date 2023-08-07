@@ -26,7 +26,7 @@ layout: default
 
     {% for count in (2..paginator.total_pages) %}
     <li class="page-item {% if count == paginator.page %}active{% endif %}">
-      <a class="page-link" href="/page{{ count }}">{{ count }}</a>
+      <a class="page-link" href="/page/{{ count }}">{{ count }}</a>
     </li>
     {% endfor %}
 
@@ -34,7 +34,7 @@ layout: default
       <a class="page-link" href="{{paginator.next_page_path}}" aria-label="Next"><span aria-hidden="true" title="下一页">&raquo;</span></a>
     </li>
     <li class="page-item {% if paginator.page == paginator.total_pages %}disabled{% endif %}">
-      <a class="page-link" href="/page{{paginator.total_pages}}">末页</a>
+      <a class="page-link" href="/page/{{paginator.total_pages}}">末页</a>
     </li>
     <li class="page-item"><span class="page-link">共{{paginator.total_pages}}页</span></li>
   </ul>

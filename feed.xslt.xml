@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:atom="http://www.w3.org/2005/Atom"
+                xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
+    <xsl:template match="/">
+        <html xmlns="http://www.w3.org/1999/xhtml" class="h-100">
+            <head>
+                <meta charset="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <title>
+                    <xsl:value-of select="/rss/channel/title"/> RSS Feed
+                </title>
+                <link rel="stylesheet" href="/css/main.css"/>
+            </head>
+            <body class="d-flex flex-column h-100">
+                <header class="container bg-body-tertiary p-5 rounded">
+                    <h1>RSS Feed</h1>
+                    <h2>
+                        <xsl:value-of select="/rss/channel/title"/>
+                    </h2>
+                    <a hreflang="en" target="_blank">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="/rss/channel/link"/>
+                        </xsl:attribute>
+                        Visit Website &#x2192;
+                    </a>
+                </header>
+                <main class="container">
+                    <div class="card mt-2">
+                        <div class="card-header">
+                            最近更新的文章
+                        </div>
+                        <div class="card-body">
+                            <xsl:for-each select="/rss/channel/item">
+                                <ul class="list-group mb-2">
+                                    <li class="list-group-item">
+                                        <span class="badge text-bg-secondary float-end">
+                                            <xsl:value-of select="pubDate"/>
+                                        </span>
+                                        <a hreflang="en" target="_blank">
+                                            <xsl:attribute name="href">
+                                                <xsl:value-of select="link"/>
+                                            </xsl:attribute>
+                                            <xsl:value-of select="title"/>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </xsl:for-each>
+                        </div>
+                    </div>
+                </main>
+                <footer class="footer mt-auto py-3 bg-body-tertiary">
+                    <div class="container">
+                        <span class="text-body-secondary">
+                            <xsl:value-of select="/rss/channel/description"/>
+                        </span>
+                    </div>
+                </footer>
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 关于
-permalink: /about/
+title: About
+permalink: /about
 ---
 
 本站代码地址:<https://github.com/runphp/blog.runphp.net>
