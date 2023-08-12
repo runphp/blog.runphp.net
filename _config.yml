@@ -22,6 +22,7 @@ paginate_path: /page/:num
 markdown: kramdown
 kramdown:
   input:          GFM
+fenced_code_blocks: true
 exclude:      [".idea"]
 sass:
   sass_dir: _sass
