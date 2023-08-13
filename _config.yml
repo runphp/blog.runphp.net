@@ -16,7 +16,7 @@ author: runphp
 github_username: runphp
 output_ext: .html
 permalink: /:categories/:year/:month/:day/:title:output_ext
-paginate: 10
+paginate: 50
 paginate_path: /page/:num
 # Build settings
 markdown: kramdown

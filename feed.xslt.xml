@@ -13,7 +13,7 @@
                 <link rel="stylesheet" href="/css/main.css"/>
             </head>
             <body class="d-flex flex-column h-100">
-                <header class="container bg-body-tertiary p-5 rounded">
+                <header class="container bg-body-tertiary p-5 rounded shadow-sm">
                     <h1>RSS Feed</h1>
                     <h2>
                         <xsl:value-of select="/rss/channel/title"/>
