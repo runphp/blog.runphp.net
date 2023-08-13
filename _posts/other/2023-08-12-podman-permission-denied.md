@@ -3,7 +3,7 @@ layout: post
 title:  "podman 出现listen tcp4 0.0.0.0:80: bind: permission denied"
 author: runphp
 date:   2023-08-12 18:03:04 +0800
-category: php
+category: other
 tags: podman
 ---
 
