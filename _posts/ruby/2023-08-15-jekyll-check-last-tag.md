@@ -3,8 +3,8 @@ layout: post
 title:  "Jekyll判断标签是最后一个"
 author: runphp
 date:   2023-08-15 11:45:06 +0800
-category: other
-tags: Jekyll
+category: ruby
+tags: jekyll
 ---
 
 使用forloop.last进行判断即可, 示例如下：

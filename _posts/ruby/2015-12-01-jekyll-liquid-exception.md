@@ -4,7 +4,7 @@ title:  "Jekyll 发生异常 Liquid Exception: SSL_connect"
 author: runphp
 date:   2015-12-01 15:00:48 +0800
 category: ruby
-tags: jekyll-gist
+tags: jekyll jekyll-gist
 ---
 windows下Jekyll添加jekyll-gist后，启动服务发生异常，异常示例如下：
 

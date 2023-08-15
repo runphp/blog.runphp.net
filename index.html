@@ -2,7 +2,7 @@
 layout: default
 ---
 <!-- 分页列表 -->
-<ul class="list-group mb-2">
+<ul class="list-group list-group-flush py-2">
     {% for post in paginator.posts %}
     <li class="list-group-item list-group-item-action position-relative">
         <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link">{{ post.title }}</a>

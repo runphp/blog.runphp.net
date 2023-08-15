@@ -23,14 +23,20 @@ markdown: kramdown
 kramdown:
   input:          GFM
 fenced_code_blocks: true
-exclude:      [".idea"]
+exclude:
+  - ".idea"
 sass:
   sass_dir: _sass
   style: compressed
 defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
+  - scope:
+      path: "googledfda5ebddb0304f4.html"
     values:
-      layout: "post"
+      sitemap: false
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category-archive
+    tag: tag-archive

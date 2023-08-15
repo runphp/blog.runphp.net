@@ -2,45 +2,43 @@
 layout: default
 ---
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item active">{{ page.category }}</li>
-  </ol>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active"><a href="/category/{{ page.category }}">{{ page.category }}</a></li>
+    </ol>
 </nav>
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header border-bottom clearfix">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <div class="post-meta float-end">
+    <header class="post-header border-bottom clearfix">
+        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+        <div class="post-meta float-end">
+            {% if page.author %}
+            <span class="bi bi-person px-1" aria-hidden="true"></span>
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span itemprop="name">{{ page.author }}</span>
+                </span>
+            {% endif %}
 
-      {% if page.author %}
-      <span class="bi bi-person" aria-hidden="true"></span>
-      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">{{ page.author }}</span>
-      </span>
-      {% endif %}
+            <span class="bi bi-calendar px-1" aria-hidden="true"></span>
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y年%m月%d日" }}</time>
+        </div>
+    </header>
 
-      <span class="bi bi-calendar" aria-hidden="true"></span>
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y年%m月%d日" }}</time>
-
+    <div class="post-content" itemprop="articleBody">
+        {{ content }}
     </div>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
 
 </article>
 
 
 {% if page.tags.size > 0 %}
-<div>
-  <i class="bi bi-tags" aria-hidden="true"></i>
+<p>
+    <i class="bi bi-tags" aria-hidden="true"></i>
     {% for tag in page.tags %}
-      <i class="p-1 text-info-emphasis bg-info-subtle border border-primary-subtle rounded-1">{{ tag }}</i>
-      {% if forloop.last %}{% else %},{% endif %}
+    <a class="link-info" href="/tag/{{ tag }}">{{ tag }}</a>
+    {% unless forloop.last %},{% endunless %}
     {% endfor %}
-</div>
+</p>
 {% endif %}
 
 {% include gitment.html %}

@@ -32,7 +32,7 @@
                         </div>
                         <div class="card-body">
                             <xsl:for-each select="/rss/channel/item">
-                                <ul class="list-group mb-2">
+                                <ul class="list-group list-group-flush py-2">
                                     <li class="list-group-item list-group-item-action position-relative">
                                         <a hreflang="en" target="_blank" class="stretched-link">
                                             <xsl:attribute name="href">
