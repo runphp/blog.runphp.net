@@ -13,7 +13,7 @@
                 <link rel="stylesheet" href="/css/main.css"/>
             </head>
             <body class="d-flex flex-column h-100">
-                <header class="container bg-body-tertiary p-5 rounded shadow-sm">
+                <header class="container bg-body-tertiary p-5 rounded shadow-sm mb-5">
                     <h1>RSS Feed</h1>
                     <h2>
                         <xsl:value-of select="/rss/channel/title"/>
@@ -26,23 +26,23 @@
                     </a>
                 </header>
                 <main class="container">
-                    <div class="card mt-2">
+                    <div class="card mb-5">
                         <div class="card-header">
                             最近更新的文章
                         </div>
                         <div class="card-body">
                             <xsl:for-each select="/rss/channel/item">
                                 <ul class="list-group mb-2">
-                                    <li class="list-group-item">
-                                        <span class="badge text-bg-secondary float-end">
-                                            <xsl:value-of select="pubDate"/>
-                                        </span>
-                                        <a hreflang="en" target="_blank">
+                                    <li class="list-group-item list-group-item-action position-relative">
+                                        <a hreflang="en" target="_blank" class="stretched-link">
                                             <xsl:attribute name="href">
                                                 <xsl:value-of select="link"/>
                                             </xsl:attribute>
                                             <xsl:value-of select="title"/>
                                         </a>
+                                        <small class="float-end">
+                                            <xsl:value-of select="pubDate"/>
+                                        </small>
                                     </li>
                                 </ul>
                             </xsl:for-each>

@@ -1,6 +1,11 @@
 <footer class="footer mt-auto py-3 bg-body-tertiary">
   <div class="container">
     <span class="text-body-secondary">{{ site.description }}</span>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ "/feed.xml" | prepend:site.baseurl }}"><i class="bi bi-rss" aria-hidden="true">RSS</i></a>
+      </li>
+    </ul>
   </div>
 </footer>
 <script src="{{ "/js/bootstrap.bundle.min.js" | prepend: site.baseurl }}"></script>

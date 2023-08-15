@@ -8,7 +8,7 @@ permalink: /about
 
 两个孩子的父亲, 平时喜欢编程, 跑步, 爬山, 滑板和游泳.
 
-<img src="/avatar.jpg" alt="程序员阿辉的头像" height="400" width="400">
+<img src="/avatar.jpg" alt="程序员阿辉的头像" height="400" width="400" class="img-thumbnail rounded">
 
 乐于帮助大家解决各类Bug与技术难题.
 

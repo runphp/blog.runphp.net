@@ -4,9 +4,9 @@ layout: default
 <!-- 分页列表 -->
 <ul class="list-group mb-2">
     {% for post in paginator.posts %}
-    <li class="list-group-item">
-        <span class="badge text-bg-secondary float-end">{{ post.date | date:"%Y年%m月%d日" }}</span>
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <li class="list-group-item list-group-item-action position-relative">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link">{{ post.title }}</a>
+        <small class="float-end">{{ post.date | date:"%Y年%m月%d日" }}</small>
     </li>
     {% endfor %}
 </ul>
