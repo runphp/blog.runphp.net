@@ -11,7 +11,7 @@ layout: default
 
     <header class="post-header border-bottom clearfix">
         <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-        <div class="post-meta float-end">
+        <div class="post-meta">
             {% if page.author %}
             <span class="bi bi-person px-1" aria-hidden="true"></span>
             <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -19,8 +19,8 @@ layout: default
                 </span>
             {% endif %}
 
-            <span class="bi bi-calendar px-1" aria-hidden="true"></span>
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y年%m月%d日" }}</time>
+            <span class="bi bi-clock-history px-1" aria-hidden="true"></span>
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date:"%Y-%m-%d %H:%S:%M" }}</time>
         </div>
     </header>
 
@@ -30,7 +30,7 @@ layout: default
 
 </article>
 
-
+<!-- tags -->
 {% if page.tags.size > 0 %}
 <p>
     <i class="bi bi-tags" aria-hidden="true"></i>
@@ -40,5 +40,21 @@ layout: default
     {% endfor %}
 </p>
 {% endif %}
+
+<div class="row">
+    {% if page.previous.url %}
+    <span class="col-lg-6 col-sm-12">
+        <i class="bi bi-arrow-left mx-1" aria-hidden="true"></i>
+        <a class="link-underline-secondary" href="{{page.previous.url}}">{{page.previous.title}}</a>
+    </span>
+    {% endif %}
+    {% if page.next.url %}
+    <span class="col-lg-6 text-lg-end">
+        <i class="bi bi-arrow-right float-lg-end mx-1" aria-hidden="true"></i>
+        <a class="link-underline-secondary" href="{{page.next.url}}">{{page.next.title}}</a>
+    </span>
+    {% endif %}
+</div>
+
 
 {% include gitment.html %}

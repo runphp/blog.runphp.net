@@ -2,11 +2,13 @@
 layout: default
 ---
 <!-- 分页列表 -->
-<ul class="list-group list-group-flush py-2">
+<ul class="list-group list-group-flush py-2 ms-0">
     {% for post in paginator.posts %}
-    <li class="list-group-item list-group-item-action position-relative">
-        <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link">{{ post.title }}</a>
-        <small class="float-end">{{ post.date | date:"%Y年%m月%d日" }}</small>
+    <li class="list-group-item list-group-item-action">
+        <small class="text-body-tertiary">{{ post.date | date:"%Y-%m-%d %H:%S:%M" }}</small>
+        <div class="d-flex w-100 justify-content-between">
+            <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link"><h5>{{ post.title }}</h5></a>
+        </div>
     </li>
     {% endfor %}
 </ul>

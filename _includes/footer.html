@@ -1,11 +1,26 @@
 <footer class="footer mt-auto py-3 bg-body-tertiary">
-  <div class="container">
-    <span class="text-body-secondary">{{ site.description }}</span>
-    <ul class="nav justify-content-end">
-      <li class="nav-item">
-        <a class="nav-link" href="{{ "/feed.xml" | prepend:site.baseurl }}"><i class="bi bi-rss" aria-hidden="true">RSS</i></a>
-      </li>
-    </ul>
-  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-sm-12">
+                <span class="text-body-secondary">{{ site.description }}</span>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <ul class="nav row">
+                    <li class="nav-item col-12">
+                        <i class="bi bi-wechat text-info" aria-label="Wechat">&nbsp;{{site:wechat}}</i>
+                    </li>
+                    <li class="nav-item col-12">
+                        <i class="bi bi-envelope text-info" aria-label="Email">&nbsp;<a href="mailto:{{site.email}}">{{site.email}}</a></i>
+                    </li>
+                    <li class="nav-item col-12">
+                        <i class="bi bi-tencent-qq text-info" aria-label="Tencent QQ">&nbsp;{{site:QQ}}</i>
+                    </li>
+                    <li class="nav-item col-12">
+                        <i class="bi bi-rss text-info" aria-label="RSS">&nbsp;<a href="{{ "/feed.xml" | prepend:site.baseurl }}">RSS</a></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>
 <script src="{{ "/js/bootstrap.bundle.min.js" | prepend: site.baseurl }}"></script>
