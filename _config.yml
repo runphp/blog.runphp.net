@@ -17,6 +17,8 @@ paginate_path: /page/:num
 markdown: kramdown
 kramdown:
   input:          GFM
+  syntax_highlighter_opts:
+    default_lang: shell
 fenced_code_blocks: true
 exclude:
   - ".idea"

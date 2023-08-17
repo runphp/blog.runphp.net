@@ -35,25 +35,25 @@ layout: default
 <p>
     <i class="bi bi-tags" aria-hidden="true"></i>
     {% for tag in page.tags %}
-    <a class="link-info" href="/tag/{{ tag }}">{{ tag }}</a>
+    <a class="link-underline-info" href="/tag/{{ tag }}">{{ tag }}</a>
     {% unless forloop.last %},{% endunless %}
     {% endfor %}
 </p>
 {% endif %}
 
 <div class="row">
-    {% if page.previous.url %}
     <span class="col-lg-6 col-sm-12">
+    {% if page.previous.url %}
         <i class="bi bi-arrow-left mx-1" aria-hidden="true"></i>
         <a class="link-underline-secondary" href="{{page.previous.url}}">{{page.previous.title}}</a>
-    </span>
     {% endif %}
-    {% if page.next.url %}
+    </span>
     <span class="col-lg-6 text-lg-end">
+    {% if page.next.url %}
         <i class="bi bi-arrow-right float-lg-end mx-1" aria-hidden="true"></i>
         <a class="link-underline-secondary" href="{{page.next.url}}">{{page.next.title}}</a>
-    </span>
     {% endif %}
+    </span>
 </div>
 
 

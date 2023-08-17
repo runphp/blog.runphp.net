@@ -3,7 +3,7 @@ layout: post
 title:  "I asked nothing"
 author: runphp
 date:   2018-01-24 19:48:12 +0800
-category: other
+category: english
 tags: 泰戈尔
 ---
 

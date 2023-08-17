@@ -1,7 +1,5 @@
-@use "sass:math";
+/**
+ * custom variables
+ */
 
-$spacing-unit:     30px;
-
-%vertical-rhythm {
-  margin-bottom: math.div($spacing-unit, 2);
-}
+$body-padding-top:                     4.5rem !default;

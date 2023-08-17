@@ -30,30 +30,24 @@
             </div>
           </div>
         </header>
-
-        <main class="container mt-5">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">最新文章</h5>
-              <xsl:for-each select="/rss/channel/item">
-                <ul class="list-group list-group-flush py-2 ms-0">
-                  <li class="list-group-item list-group-item-action">
-                    <small class="text-body-tertiary">
-                      <xsl:value-of select="pubDate"/>
-                    </small>
-                    <div class="d-flex w-100 justify-content-between">
-                      <a hreflang="en" class="stretched-link">
-                          <xsl:attribute name="href">
-                            <xsl:value-of select="link"/>
-                          </xsl:attribute>
-                          <xsl:value-of select="title"/>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </xsl:for-each>
-            </div>
-          </div>
+        <main class="container">
+          <ul class="list-group list-group-flush py-4 ms-0">
+            <xsl:for-each select="/rss/channel/item">
+              <li class="list-group-item list-group-item-action">
+                <small class="text-body-tertiary">
+                  <xsl:value-of select="pubDate"/>
+                </small>
+                <div class="d-flex w-100 justify-content-between">
+                  <a hreflang="en" class="stretched-link">
+                    <xsl:attribute name="href">
+                      <xsl:value-of select="link"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="title"/>
+                  </a>
+                </div>
+              </li>
+            </xsl:for-each>
+          </ul>
         </main>
         <footer class="footer mt-auto py-3 bg-body-tertiary">
           <div class="container">

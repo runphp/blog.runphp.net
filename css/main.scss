@@ -2,10 +2,4 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-    "variables",
-    "custom",
-    "bootstrap-5.3.1/bootstrap",
-    "bootstrap-icons",
-    "syntax-highlighting"
-;
+@import "style";
