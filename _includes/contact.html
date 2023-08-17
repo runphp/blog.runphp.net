@@ -1,0 +1,14 @@
+<ul class="nav row text-info-emphasis">
+    <li class="nav-item col-12">
+        <i class="bi bi-wechat" aria-label="Wechat">&nbsp;{{site:wechat}}</i>
+    </li>
+    <li class="nav-item col-12">
+        <i class="bi bi-envelope" aria-label="Email">&nbsp;<a href="mailto:{{site.email}}">{{site.email}}</a></i>
+    </li>
+    <li class="nav-item col-12">
+        <i class="bi bi-tencent-qq" aria-label="Tencent QQ">&nbsp;{{site:QQ}}</i>
+    </li>
+    <li class="nav-item col-12">
+        <i class="bi bi-rss" aria-label="RSS">&nbsp;<a href="{{ "/feed.xml" | prepend:site.baseurl }}">RSS</a></i>
+    </li>
+</ul>
