@@ -51,7 +51,7 @@
         </main>
         <footer class="footer mt-auto py-3 bg-body-tertiary">
           <div class="container">
-            <span class="text-body-secondary">
+            <span class="text-info-emphasis">
               <xsl:value-of select="/rss/channel/description"/>
             </span>
           </div>
