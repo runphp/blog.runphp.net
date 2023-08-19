@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="/css/main.css"/>
       </head>
       <body class="d-flex flex-column h-100">
-        <header class="container fixed-top">
-          <div class="card">
+        <header class="container sticky-top p-3">
+          <div class="card shadow-sm">
             <div class="card-body">
               <h5 class="card-title">RSS Feed</h5>
               <p class="card-text">
@@ -49,9 +49,9 @@
             </xsl:for-each>
           </ul>
         </main>
-        <footer class="footer mt-auto py-3 bg-body-tertiary">
+        <footer class="footer mt-auto py-3 bg-white border-top">
           <div class="container">
-            <span class="text-body-secondary">
+            <span>
               <xsl:value-of select="/rss/channel/description"/>
             </span>
           </div>
