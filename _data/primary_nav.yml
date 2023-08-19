@@ -1,0 +1,17 @@
+# 主导航条
+- title: Home
+  link: /
+- title: English
+  link: /english/
+- title: Linux
+  link: /linux/
+- title: PHP
+  link: /php/
+- title: Python
+  link: /python/
+- title: Ruby
+  link: /ruby/
+- title: Other
+  link: /other/
+- title: About
+  link: /about

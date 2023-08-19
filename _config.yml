@@ -34,6 +34,6 @@ jekyll-archives:
   enabled:
     - categories
     - tags
-  layouts:
-    category: category-archive
-    tag: tag-archive
+  permalinks:
+    category: :name/
+    tag: :name/

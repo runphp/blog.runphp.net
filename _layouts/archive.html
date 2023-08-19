@@ -1,0 +1,54 @@
+---
+layout: default
+---
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb p-3 mt-3 bg-body-tertiary rounded-3">
+        <li class="breadcrumb-item"><a href="{{'/' | absolute_url}}">Home</a></li>
+        <li class="breadcrumb-item active">{{ page.title }}</li>
+    </ol>
+</nav>
+<ul class="list-group list-group-flush py-2 ms-0 shadow-sm mb-3">
+    {% for post in page.posts %}
+    <li class="list-group-item list-group-item-action">
+        <small class="text-info-emphasis">{{ post.date | date:"%Y-%m-%d %H:%S:%M" }}</small>
+        <div class="d-flex w-100 justify-content-between">
+            <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link">{{ post.title }}</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+<div class="row mb-3">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                分类
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for category in site.categories %}
+                {% capture category_name %}{{ category | first }}{% endcapture %}
+                <li class="list-group-item">
+                    <a href="{{'/' | append:category_name | absolute_url }}/">{{ category_name }}</a>
+                    <span class="badge bg-primary rounded-pill">{{site.categories[category_name].size}}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                标签
+            </div>
+            <ul class="list-group list-group-flush">
+                {% for tag in site.tags %}
+                {% capture tag_name %}{{ tag | first }}{% endcapture %}
+                <li class="list-group-item">
+                    <a href="{{'/' | append:tag_name | absolute_url }}/">{{ tag_name }}</a>
+                    <span class="badge bg-primary rounded-pill">{{site.tags[tag_name].size}}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
