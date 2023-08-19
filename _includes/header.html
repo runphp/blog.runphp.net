@@ -17,7 +17,7 @@
                     {% for p in site.data.primary_nav %}
                     <li class="nav-item">
                         <a class="nav-link{%- if p.link == '/' %}{% if page.url == '/' %} active {% endif %}{% else %}{%- if page.url contains p.link %} active{% endif %}{% endif %}"
-                           href="{{ p.link | absolute_url }}">{{ p.title }}</a>
+                           href="{{ p.link | absolute_url }}"><i class="d-lg-none bi bi-{{p.icon}}" aria-hidden="true"></i>{{ p.title }}</a>
                     </li>
                     {% endfor %}
                 </ul>
@@ -25,4 +25,3 @@
         </div>
     </div>
 </nav>
-

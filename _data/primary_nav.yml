@@ -1,17 +1,25 @@
 # 主导航条
 - title: Home
   link: /
+  icon: house
 - title: English
   link: /english/
+  icon: translate
 - title: Linux
   link: /linux/
+  icon: ubuntu
 - title: PHP
   link: /php/
+  icon: filetype-php
 - title: Python
   link: /python/
+  icon: filetype-py
 - title: Ruby
   link: /ruby/
+  icon: filetype-rb
 - title: Other
   link: /other/
+  icon: file
 - title: About
   link: /about
+  icon: file-person
