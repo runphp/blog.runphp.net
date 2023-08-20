@@ -18,15 +18,17 @@
           <div class="card shadow-sm">
             <div class="card-body">
               <h5 class="card-title">RSS Feed</h5>
-              <p class="card-text">
-                <xsl:value-of select="/rss/channel/title"/>
-                <a hreflang="en" class="card-link">
+              <div class="card-text">
+                <h6><xsl:value-of select="/rss/channel/title"/></h6>
+                <div class="text-body-tertiary">Generator：<xsl:value-of select="/rss/channel/generator"/></div>
+                <div class="text-body-tertiary">LastBuildDate：<xsl:value-of select="/rss/channel/lastBuildDate"/></div>
+                <a hreflang="en" class="card-link py-3">
                   <xsl:attribute name="href">
                     <xsl:value-of select="/rss/channel/link"/>
                   </xsl:attribute>
                   Visit Website &#x2192;
                 </a>
-              </p>
+              </div>
             </div>
           </div>
         </header>
