@@ -3,3 +3,10 @@
 @import "bootstrap-icons";
 @import "syntax-highlighting";
 @import "variables";
+
+
+body {
+  background: $backgroundColor;
+  color: $bodyColor;
+  font-family: $bodyFont;
+}
