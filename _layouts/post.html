@@ -4,7 +4,9 @@ layout: default
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb p-3 mt-3 bg-body-tertiary rounded-3">
         <li class="breadcrumb-item"><a href="{{'/' | absolute_url}}">Home</a></li>
-        <li class="breadcrumb-item active"><a href="{{ '/' | append:page.category | absolute_url }}/">{{ page.category }}</a></li>
+        <li class="breadcrumb-item active">
+            <a href="{{ '/' | append:page.category | absolute_url }}/">{{ page.category }}</a>
+        </li>
     </ol>
 </nav>
 <article class="post shadow-sm p-3" itemscope itemtype="http://schema.org/BlogPosting">
@@ -14,17 +16,30 @@ layout: default
             {% if page.author %}
             <span class="bi bi-person px-1" aria-hidden="true"></span>
             <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                    <span itemprop="name">{{ page.author }}</span>
-                </span>
+                <span itemprop="name">{{ page.author }}</span>
+            </span>
             {% endif %}
 
             <span class="bi bi-clock-history px-1" aria-hidden="true"></span>
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date:"%Y-%m-%d %H:%S:%M" }}</time>
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                {{ page.date | date:"%Y-%m-%d %H:%S:%M" }}
+            </time>
         </div>
     </header>
 
     <div class="post-content" itemprop="articleBody">
+        {% if page.toc %}
+        <div class="row">
+            <div class="toc sticky-lg-top col-lg-4 order-lg-1">
+                {{ content | toc_only }}
+            </div>
+            <div class="col-lg-8 order-lg-0" data-bs-spy="scroll" data-bs-target="#toc" data-bs-smooth-scroll="true">
+                {{ content | inject_anchors }}
+            </div>
+        </div>
+        {% else %}
         {{ content }}
+        {% endif %}
     </div>
 
 </article>

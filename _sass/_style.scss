@@ -10,3 +10,26 @@ body {
   color: $bodyColor;
   font-family: $bodyFont;
 }
+
+// table of contents
+.toc {
+  top: 4rem;
+  height: calc(70vh - 7rem);
+  ul {
+    list-style: none;
+  }
+  .section-nav {
+    margin: 5px 0;
+    padding: 10px 0px;
+    a {
+      padding: .125rem 0 .125rem .75rem;
+      color: var(--bs-link-color);
+      border-left: 2px var(--bs-border-style) var(--bs-border-color) !important;
+    }
+
+    a:hover, a.active {
+      color: var(--bs-link-hover-color) !important;
+      border-left: 2px var(--bs-border-style) var(--bs-link-hover-color) !important;
+    }
+  }
+}

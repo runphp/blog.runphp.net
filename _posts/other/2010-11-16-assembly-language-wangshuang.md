@@ -5,6 +5,7 @@ author: runphp
 date: '2010-11-16 21:43:00 +0800'
 category: other
 tags: assembly 王爽 汇编语言
+toc: true
 ---
 
 ## 实验4 [bx]和loop的使用
@@ -302,6 +303,7 @@ end start
 ## 实验10 编写子程序
 
 1. 显示字符串
+
 ```asm
 assume cs:code
  
