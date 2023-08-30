@@ -9,7 +9,7 @@ layout: default
         </li>
     </ol>
 </nav>
-<article class="post shadow-sm p-3" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post p-3" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header border-bottom mb-4">
         <h1 class="post-title fw-semibold" itemprop="name headline">{{ page.title }}</h1>
         <div class="post-meta text-muted">
@@ -33,7 +33,7 @@ layout: default
             <div class="toc sticky-lg-top col-lg-4 order-lg-1">
                 {{ content | toc_only }}
             </div>
-            <div class="col-lg-8 order-lg-0" data-bs-spy="scroll" data-bs-target="#toc" data-bs-smooth-scroll="true">
+            <div class="col-lg-8 order-lg-0" data-bs-spy="scroll" data-bs-target="#toc" data-bs-smooth-scroll="true" tabindex="0">
                 {{ content | inject_anchors }}
             </div>
         </div>

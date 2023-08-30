@@ -15,23 +15,24 @@ body {
 .toc {
   top: 4rem;
   @media (min-width: 992px) {
-    height: calc(70vh - 7rem);
+    height: calc(100vh - 7rem);
+    overflow-y: auto;
   }
   ul {
     list-style: none;
   }
-  .section-nav {
-    margin: 5px 0;
-    padding: 10px 0px;
+  li {
+    @extend .justify-content-between,.text-truncate;
     a {
-      padding: .125rem 0 .125rem .75rem;
-      color: var(--bs-link-color);
-      border-left: 2px var(--bs-border-style) var(--bs-border-color) !important;
+      display: block;
+      padding: $nav-link-padding-y $nav-link-padding-x;
+      color: $link-color;
+      border-left: 2px $border-style $border-color;
     }
 
     a:hover, a.active {
-      color: var(--bs-link-hover-color) !important;
-      border-left: 2px var(--bs-border-style) var(--bs-link-hover-color) !important;
+      color: $nav-link-hover-color;
+      border-left: 2px $border-style $link-hover-color;
     }
   }
 }
