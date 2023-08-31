@@ -26,10 +26,18 @@ sass:
   sass_dir: _sass
   style: compressed
 defaults:
-  - scope:
+  -
+    scope:
       path: "googledfda5ebddb0304f4.html"
     values:
       sitemap: false
+  -
+    scope:
+        path: '_posts'
+        type: posts
+    values:
+        layout: post
+        author: runphp
 jekyll-archives:
   enabled:
     - categories

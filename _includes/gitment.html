@@ -1,8 +1,8 @@
 <div id="container"></div>
 <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>-->
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<link rel="stylesheet" href="/css/gitalk.css">
+<script src="/js/gitalk.min.js"></script>
 <script>
     const clientId = '8446d1cf5ca4a2a8cde3'
     const clientSecret = '764411887b93d958b7e26c0faf64a69f9485d2ed'
@@ -22,8 +22,8 @@
         clientSecret: clientSecret,
         repo: 'blog.runphp.net',      // The repository of store comments,
         owner: 'runphp',
-        admin: ['runphp GitHub repo owner and collaborators, only these guys can initialize github issues'],
-        id: '{{ page.id }}',      // Ensure uniqueness and length less than 50
+        admin: ['runphp'],
+        id: '{{page.url}}',      // Ensure uniqueness and length less than 50
         distractionFreeMode: false  // Facebook-like distraction free mode
     })
 
