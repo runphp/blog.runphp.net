@@ -10,7 +10,7 @@
         repo: 'blog.runphp.net',
         owner: 'runphp',
         admin: ['runphp'],
-        id: '{{page.url}}',
+        id: '{{page.date | date:"%Y-%m-%d %H:%S:%M" }}',
         distractionFreeMode: false
     })
     gitalk.render('gitalk-container')
