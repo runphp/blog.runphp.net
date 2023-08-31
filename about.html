@@ -3,9 +3,12 @@ layout: page
 title: About
 permalink: /about
 ---
-<div class="clearfix">
+<section class="p-4 text-center w-100 border-top">
+    <img src="{% gravatar_url email:site.email, extension:png, size:128 %}" class="rounded-circle" style="width: 128px;" alt="程序员阿辉的头像" />
+</section>
+<div class="border-top p-4">
     <p>大家好, 我是程序员阿辉, 1981年出生, 来自湖南长沙.</p>
-    <img src="/avatar.jpg" alt="程序员阿辉的头像" height="300" width="300" class="img-thumbnail rounded float-md-end"/>
+
     <p>两个孩子的父亲, 平时喜欢编程, 跑步, 爬山, 滑板和游泳.</p>
     <p>乐于帮助大家解决各类Bug与技术难题.</p>
     <p>常使用的编程语言有PHP, Java, Go, Ruby, Typescript, Rust.</p>

@@ -1,0 +1,17 @@
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="/css/gitalk.css">
+<script src="/js/gitalk.min.js"></script>
+<script>
+    const clientId = '8446d1cf5ca4a2a8cde3'
+    const clientSecret = '764411887b93d958b7e26c0faf64a69f9485d2ed'
+    const gitalk = new Gitalk({
+        clientID: '8446d1cf5ca4a2a8cde3',
+        clientSecret: '764411887b93d958b7e26c0faf64a69f9485d2ed',
+        repo: 'blog.runphp.net',
+        owner: 'runphp',
+        admin: ['runphp'],
+        id: '{{page.url}}',
+        distractionFreeMode: false
+    })
+    gitalk.render('gitalk-container')
+</script>
