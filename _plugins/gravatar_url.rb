@@ -17,7 +17,17 @@ module Jekyll
       hash = Digest::MD5.hexdigest(email.downcase.strip)
       extension = @attributes['extension']
       size = @attributes['size']
-      "//gravatar.com/avatar/#{hash}.#{extension}?s=#{size}"
+      gravatar_url = "https://gravatar.com/avatar/#{hash}.#{extension}?s=#{size}"
+      # download gravatar
+      begin
+        file = URI.open(gravatar_url)
+      rescue => e
+        # todo
+        Jekyll.logger.warn e
+        return gravatar_url
+      end
+      IO.copy_stream(file, "_site/avatar/#{hash}-#{size}.#{extension}")
+      "/avatar/#{hash}-#{size}.#{extension}"
     end
 
     def look_up(context, name)

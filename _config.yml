@@ -22,7 +22,9 @@ kramdown:
     default_lang: shell
 fenced_code_blocks: true
 exclude:
-  - ".idea"
+  - .idea
+keep_files:
+  - avatar
 sass:
   sass_dir: _sass
   style: compressed
