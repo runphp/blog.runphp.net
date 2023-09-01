@@ -18,6 +18,7 @@ module Jekyll
       extension = @attributes['extension']
       size = @attributes['size']
       gravatar_url = "https://gravatar.com/avatar/#{hash}.#{extension}?s=#{size}"
+      save_path = "_site/avatar/#{hash}-#{size}.#{extension}"
       # download gravatar
       begin
         file = URI.open(gravatar_url)
@@ -26,7 +27,8 @@ module Jekyll
         Jekyll.logger.warn e
         return gravatar_url
       end
-      IO.copy_stream(file, "_site/avatar/#{hash}-#{size}.#{extension}")
+      FileUtils.mkdir_p(File.dirname(save_path))
+      IO.copy_stream(file, save_path)
       "/avatar/#{hash}-#{size}.#{extension}"
     end
 
@@ -37,6 +39,7 @@ module Jekyll
       end
       lookup
     end
+
     Liquid::Template.register_tag('gravatar_url', self)
   end
 end
