@@ -19,17 +19,18 @@ module Jekyll
       size = @attributes['size']
       gravatar_url = "https://gravatar.com/avatar/#{hash}.#{extension}?s=#{size}"
       save_path = "_site/avatar/#{hash}-#{size}.#{extension}"
+      local_url = "/avatar/#{hash}-#{size}.#{extension}"
+      return local_url if File.exist?(save_path)
       # download gravatar
       begin
         file = URI.open(gravatar_url)
       rescue => e
-        # todo
         Jekyll.logger.warn e
         return gravatar_url
       end
       FileUtils.mkdir_p(File.dirname(save_path))
       IO.copy_stream(file, save_path)
-      "/avatar/#{hash}-#{size}.#{extension}"
+      local_url
     end
 
     def look_up(context, name)
