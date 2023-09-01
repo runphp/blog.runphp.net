@@ -10,7 +10,7 @@ layout: default
 <ul class="list-group list-group-flush py-2 ms-0 shadow-sm mb-3">
     {% for post in page.posts %}
     <li class="list-group-item list-group-item-action">
-        <small class="text-info-emphasis">{{ post.date | date:"%Y-%m-%d %H:%S:%M" }}</small>
+        <small class="text-info-emphasis">{{ post.date | date:"%Y-%m-%d %H:%M:%S" }}</small>
         <div class="d-flex w-100 justify-content-between">
             <a href="{{ post.url | prepend: site.baseurl }}" class="stretched-link">{{ post.title }}</a>
         </div>

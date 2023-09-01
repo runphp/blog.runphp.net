@@ -1,4 +1,5 @@
 require 'digest/md5'
+require "open-uri"
 
 module Jekyll
   class GravatarUrl < Liquid::Tag
@@ -10,13 +11,13 @@ module Jekyll
 
     def render(context)
       email = @attributes['email']
-      if email !~  /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i and email =~ /([\w]+(\.[\w]+)*)/i
+      if email !~ /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i and email =~ /([\w]+(\.[\w]+)*)/i
         email = look_up(context, $1)
       end
       hash = Digest::MD5.hexdigest(email.downcase.strip)
       extension = @attributes['extension']
       size = @attributes['size']
-      return "//gravatar.com/avatar/#{hash}.#{extension}?s=#{size}"
+      "//gravatar.com/avatar/#{hash}.#{extension}?s=#{size}"
     end
 
     def look_up(context, name)
@@ -26,7 +27,7 @@ module Jekyll
       end
       lookup
     end
+    Liquid::Template.register_tag('gravatar_url', self)
   end
 end
 
-Liquid::Template.register_tag('gravatar_url', Jekyll::GravatarUrl)

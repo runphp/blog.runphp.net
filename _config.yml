@@ -15,6 +15,7 @@ paginate: 50
 paginate_path: /page/:num
 # Build settings
 markdown: kramdown
+timezone: Asia/Shanghai
 kramdown:
   input:          GFM
   syntax_highlighter_opts:
