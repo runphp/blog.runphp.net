@@ -12,7 +12,7 @@ $offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
 //$border-radius: .4rem;
 //$success: #7952b3;
 
-$bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+$bodyFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 // Required
 @import "bootstrap/functions";
@@ -79,6 +79,22 @@ body {
   }
 }
 
+// navbar
+.nav-item {
+  a {
+    border-top: .15em $border-style transparent;
+    border-bottom: .15em $border-style transparent;
+  }
+  a.active, a:hover {
+    border-bottom: .15em $border-style $border-color;
+  }
+  @media (min-width: 992px) {
+    a.active, a:hover {
+      border-top: .15em $border-style $border-color;
+    }
+  }
+}
+
 // post
 .post {
   .post-content {
@@ -127,6 +143,7 @@ body {
     height: 1em;
     fill: currentcolor;
   }
+
   .dropdown-menu {
     padding: .25rem;
 
