@@ -9,11 +9,12 @@ tags: jekyll gravatar
 
 由于网络问题，Gravatar的头像往往无法访问
 
-> Gravatar（英语：Globally Recognized Avatar）是一项用于提供在全球范围内使用的头像服务。只要你在Gravatar的服务器上上传了你自己的头像，你便可以在其他任何支持Gravatar的博客、论坛等地方使用它。
+> Gravatar（英语：Globally Recognized Avatar）是一项用于提供在全球范围内使用的头像服务。
+> 只要你在Gravatar的服务器上上传了你自己的头像， 你便可以在其他任何支持Gravatar的博客、论坛等地方使用它。
 
 如果你也喜欢用Gravatar，可以到网上搜索国内镜像处理来解决这个问题，或者用自己的服务器做反向代理，也可以用静态文件存储服务做资源回源。
 
-下面是第3种方案，因为Github Actions运行的服务器是网络没问题，所以可以利用Github Action来下载Gravatar到本地。
+下面是第3种方案，因为Github Actions运行的服务器是网络没问题，所以可以利用Github Actions来下载Gravatar到本地。
 
 ## 使用方式
 

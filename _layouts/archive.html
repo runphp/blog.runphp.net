@@ -2,12 +2,12 @@
 layout: default
 ---
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb p-3 mt-3 bg-body-tertiary rounded-3">
+    <ol class="breadcrumb p-3 mt-3">
         <li class="breadcrumb-item"><a href="{{'/' | absolute_url}}">Home</a></li>
         <li class="breadcrumb-item active">{{ page.title }}</li>
     </ol>
 </nav>
-<ul class="list-group list-group-flush py-2 ms-0 shadow-sm mb-3">
+<ul class="list-group list-group-flush shadow-sm my-3">
     {% for post in page.posts %}
     <li class="list-group-item list-group-item-action">
         <small class="text-info-emphasis">{{ post.date | date:"%Y-%m-%d %H:%M:%S" }}</small>
@@ -29,7 +29,7 @@ layout: default
                 {% capture category_name %}{{ category | first }}{% endcapture %}
                 <li class="list-group-item">
                     <a href="{{'/' | append:category_name | absolute_url }}/">{{ category_name }}</a>
-                    <span class="badge bg-primary rounded-pill">{{site.categories[category_name].size}}</span>
+                    <span class="badge text-bg-danger">{{site.categories[category_name].size}}</span>
                 </li>
                 {% endfor %}
             </ul>
@@ -45,7 +45,7 @@ layout: default
                 {% capture tag_name %}{{ tag | first }}{% endcapture %}
                 <li class="list-group-item">
                     <a href="{{'/' | append:tag_name | absolute_url }}/">{{ tag_name }}</a>
-                    <span class="badge bg-primary rounded-pill">{{site.tags[tag_name].size}}</span>
+                    <span class="badge text-bg-danger">{{site.tags[tag_name].size}}</span>
                 </li>
                 {% endfor %}
             </ul>

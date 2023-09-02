@@ -2,7 +2,7 @@
 layout: default
 ---
 <!-- 分页列表 -->
-<ul class="list-group list-group-flush py-2 ms-0">
+<ul class="list-group list-group-flush ms-0 shadow-sm my-3">
     {% for post in paginator.posts %}
     <li class="list-group-item list-group-item-action" title="{{ post.title }}">
         <small class="text-info-emphasis">{{ post.date | date:"%Y-%m-%d %H:%M:%S" }}</small>
