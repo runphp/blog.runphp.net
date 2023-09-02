@@ -2,7 +2,7 @@
 title: Jekyll下载Gravatar头像到本地
 category: ruby
 date: '2023-09-02 01:30:00'
-tags: jekyll, gravatar
+tags: jekyll gravatar
 ---
 
 ## 关于Gravatar的问题
@@ -13,7 +13,7 @@ tags: jekyll, gravatar
 
 如果你也喜欢用Gravatar，可以到网上搜索国内镜像处理来解决这个问题，或者用自己的服务器做反向代理，也可以用静态文件存储服务做资源回源。
 
-下面是第3种方案，因为Github Action运行的服务器是网络没问题，所以可以利用Github Action来下载Gravatar到本地。
+下面是第3种方案，因为Github Actions运行的服务器是网络没问题，所以可以利用Github Action来下载Gravatar到本地。
 
 ## 使用方式
 
