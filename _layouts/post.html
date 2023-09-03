@@ -2,16 +2,16 @@
 layout: default
 ---
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb p-3 mt-3">
+    <ol class="breadcrumb mt-3">
         <li class="breadcrumb-item"><a href="{{'/' | absolute_url}}">Home</a></li>
         <li class="breadcrumb-item active">
             <a href="{{ '/' | append:page.category | absolute_url }}/">{{ page.category }}</a>
         </li>
     </ol>
 </nav>
-<article class="post p-3" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="post-header border-bottom mb-4">
-        <h1 class="post-title fw-semibold" itemprop="name headline">{{ page.title }}</h1>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header border-bottom mb-2">
+        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
         <div class="post-meta text-muted">
             {% if page.author %}
             <span class="bi bi-person px-1" aria-hidden="true"></span>

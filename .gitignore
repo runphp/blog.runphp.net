@@ -6,3 +6,4 @@ _site
 .project
 /serve
 .idea
+node_modules
