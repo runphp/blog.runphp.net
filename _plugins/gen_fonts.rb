@@ -10,7 +10,9 @@ module Jekyll
 
     def generate(site)
       @site = site
-      FileUtils.copy_entry "node_modules/bootstrap-icons/font/fonts", "_site/css/fonts"
+      save_path = "_site/css/fonts"
+      FileUtils.mkdir_p(save_path) unless File.exist?(save_path)
+      FileUtils.copy_entry "node_modules/bootstrap-icons/font/fonts", save_path
     end
   end
 end
