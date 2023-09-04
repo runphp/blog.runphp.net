@@ -2,6 +2,8 @@ require 'digest/md5'
 require "open-uri"
 
 module Jekyll
+  # Gravatar标签
+  # 由于网络问题进行下载处理
   class GravatarUrl < Liquid::Tag
 
     def initialize(tag_name, text, tokens)

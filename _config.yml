@@ -25,6 +25,7 @@ exclude:
   - .idea
 keep_files:
   - avatar
+  - css/fonts
 sass:
   load_paths: node_modules
 defaults:
