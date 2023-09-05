@@ -18,7 +18,7 @@ date: 1981-07-12 08:06:12 +0800
 
 欢迎联系我，本人乐于帮助大家解决程序开发中的各类Bug与技术难题，
 
-我常使用的编程语言有PHP, Java, Go, Ruby, Typescript, Rust.
+我常使用的编程语言有[PHP]({{ '/php' | absolute_url }}), [Java], [Go]
 
 {% include_relative README.md %}
 

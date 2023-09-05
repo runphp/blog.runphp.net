@@ -2,12 +2,6 @@
 - title: Home
   link: /
   icon: house
-- title: English
-  link: /english/
-  icon: translate
-- title: Linux
-  link: /linux/
-  icon: ubuntu
 - title: PHP
   link: /php/
   icon: filetype-php
@@ -17,6 +11,12 @@
 - title: Ruby
   link: /ruby/
   icon: filetype-rb
+- title: Linux
+  link: /linux/
+  icon: ubuntu
+- title: English
+  link: /english/
+  icon: translate
 - title: Other
   link: /other/
   icon: file

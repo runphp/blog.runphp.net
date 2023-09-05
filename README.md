@@ -7,6 +7,25 @@
 
 > 源代码: <https://github.com/runphp/blog.runphp.net>
 
+### 本地运行
+1. 确保已经安装Ruby和Nodejs
+2. 运行`npm install` 安装前端依赖包
+3. 运行`bundle install` 安装Jekyll以及依赖插件
+4. 运行`bundle exec jekyll s` 启动web服务
+5. 访问`http://localhost:4000` 访问网站
+6. 访问`http://localhost:4000/admin` 访问管理后台
+
+### 部署到Github Pages
+配置好Github Actions即可，在push代码的时候会自动运行workflow
+流程如下：
+1. 安装node环境
+2. 安装前端依赖包
+3. 安装Ruby
+4. installed gems
+5. 部署代码到Github Pages
+
+请参考文件`.github/workflows/jekyll.yml`
+
 ### 感谢以下软件或服务
 
 | 软件或服务      | 网址                                        | 说明                                                         |
