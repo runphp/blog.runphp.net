@@ -22,33 +22,37 @@ layout: default
     <div class="col">
         <div class="card">
             <div class="card-header">
-                分类
+                <i class="bi bi-bookmarks m-1"></i>分类
             </div>
-            <ul class="list-group list-group-flush">
+            <div class="card-body">
                 {% for category in site.categories %}
                 {% capture category_name %}{{ category | first }}{% endcapture %}
-                <li class="list-group-item">
-                    <a href="{{'/' | append:category_name | absolute_url }}/">{{ category_name }}</a>
-                    <span class="badge text-bg-danger">{{site.categories[category_name].size}}</span>
-                </li>
+                    <a class="btn m-1" href="{{'/' | append:category_name | absolute_url }}/">
+                        <i class="bi bi-bookmark" aria-hidden="true"></i>
+                        {{ category_name }}
+                        <span class="badge text-bg-danger">{{site.categories[category_name].size}}</span>
+                    </a>
+                    {% unless forloop.last %},{% endunless %}
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     </div>
     <div class="col">
         <div class="card">
             <div class="card-header">
-                标签
+                <i class="bi bi-tags m-1" aria-hidden="true"></i>标签
             </div>
-            <ul class="list-group list-group-flush">
+            <div class="card-body">
                 {% for tag in site.tags %}
                 {% capture tag_name %}{{ tag | first }}{% endcapture %}
-                <li class="list-group-item">
-                    <a href="{{'/' | append:tag_name | absolute_url }}/">{{ tag_name }}</a>
-                    <span class="badge text-bg-danger">{{site.tags[tag_name].size}}</span>
-                </li>
+                    <a class="btn m-1" href="{{'/' | append:tag_name | absolute_url }}/">
+                        <i class="bi bi-tag" aria-hidden="true"></i>
+                        {{ tag_name }}
+                        <span class="badge text-bg-danger">{{site.tags[tag_name].size}}</span>
+                    </a>
+                    {% unless forloop.last %},{% endunless %}
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     </div>
 </div>

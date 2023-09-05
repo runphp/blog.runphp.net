@@ -4,7 +4,7 @@ title:  "CURL状态码列表"
 author: runphp
 date:   2015-11-28 12:56:48 +0800
 category: php
-tags: laravel curl
+tags: curl
 ---
 
 状态码|状态原因|解释|

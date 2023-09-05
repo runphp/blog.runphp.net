@@ -86,7 +86,7 @@ $font-family-sans-serif:
 
 // logo
 .logo:hover {
-  svg {
+  img {
     transform: rotate(-10deg) scale(1.2);
   }
 }
@@ -94,15 +94,9 @@ $font-family-sans-serif:
 // navbar
 .nav-item {
   a {
-    border-top: .15em $border-style transparent;
-    border-bottom: .15em $border-style transparent;
-  }
-  a.active, a:hover {
-    border-bottom: .15em $border-style $border-color;
-  }
-  @media (min-width: 992px) {
-    a.active, a:hover {
-      border-top: .15em $border-style $border-color;
+    border-bottom: $border-width $border-style transparent;
+    .active, &:hover {
+      border-bottom: $border-width $border-style $border-color;
     }
   }
 }
@@ -113,7 +107,7 @@ $font-family-sans-serif:
     blockquote {
       padding: 0 1em;
       color: $text-muted;
-      border-left: .25em $border-style $border-color;
+      border-left: $border-width $border-style $border-color;
     }
   }
 }
@@ -150,12 +144,9 @@ $font-family-sans-serif:
 
 // color mode
 .color-modes {
-  .bi {
-    width: 1em;
-    height: 1em;
-    fill: currentcolor;
+  .theme-icon-active {
+    width: 16px;
   }
-
   .dropdown-menu {
     padding: .25rem;
 
@@ -171,7 +162,7 @@ $font-family-sans-serif:
   .active {
     font-weight: 600;
 
-    .bi {
+   .bi {
       display: block !important; // stylelint-disable-line declaration-no-important
     }
   }
