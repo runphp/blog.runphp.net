@@ -95,7 +95,7 @@ $font-family-sans-serif:
 .nav-item {
   a {
     border-bottom: $border-width $border-style transparent;
-    .active, &:hover {
+    &.active, &:hover {
       border-bottom: $border-width $border-style $border-color;
     }
   }
