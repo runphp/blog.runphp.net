@@ -3,11 +3,12 @@ layout: page
 title: About
 permalink: /about
 date: 1981-07-12 08:06:12 +0800
+toc: true
 ---
 
 <section class="p-3 mb-2 text-center w-100 border-bottom border-top">
     <img src="{% gravatar_url email:site.email, extension:png, size:128 %}" class="rounded-circle shadow-sm" style="width: 128px;" alt="程序员阿辉的头像" />
-    <h5 class="p-1">程序员阿辉</h5>
+    <h5 class="p-1 no_toc">程序员阿辉</h5>
 </section>
 
 ## 关于我
@@ -22,4 +23,18 @@ date: 1981-07-12 08:06:12 +0800
 
 {% include_relative README.md %}
 
+## Github 所有项目
+
+<div class="list-group">
+{% for repository in site.github.public_repositories %}
+  <a href="{{ repository.html_url }}" class="list-group-item list-group-item-action" aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1 no_toc">{{ repository.name }}</h5>
+      <small>pushed at {{repository.pushed_at | date:"%Y-%m-%d %H:%M:%S"}}</small>
+    </div>
+    <p class="mb-1">{{ repository.description }}</p>
+    <small>language {{repository.language}}</small>
+  </a>
+{% endfor %}
+</div>
 

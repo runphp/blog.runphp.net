@@ -53,7 +53,7 @@ layout: default
         {{ tag }}
         <span class="badge text-bg-danger">{{site.tags[tag].size}}</span>
     </a>
-    {% unless forloop.last %},{% endunless %}
+    {% unless forloop.last %}<div class="vr"></div>{% endunless %}
     {% endfor %}
 </div>
 {% endif %}

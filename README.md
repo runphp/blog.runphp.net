@@ -46,5 +46,6 @@
 | jekyll-toc      | <https://github.com/toshimaru/jekyll-toc>  | 可以为文章生成目录（table of contents）的一个Jekyll插件      |
 | Gravatar        | <https://gravatar.com>                     | Gravatar是一项用于提供在全球范围内使用的头像服务。只要你在Gravatar的服务器上上传了你自己的头像，你便可以在其他任何支持Gravatar的博客、论坛等地方使用它 |
 | Gitalk          | <https://github.com/gitalk/gitalk>         | Gitalk是一个基于Github issue和Preact的现代评论组件           |
+| github-metadata | <https://github.com/jekyll/github-metadata>   | Jekyll 插件，用于传播“site.github”命名空间并设置用于 GitHub 页面的默认值           |
 {: class="table table-bordered table-hover"}
 

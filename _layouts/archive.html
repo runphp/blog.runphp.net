@@ -18,13 +18,11 @@ layout: default
     {% endfor %}
 </ul>
 
-<div class="row mb-3">
+<div class="row mb-3 row-cols-lg-2 row-cols-1">
     <div class="col">
         <div class="card">
-            <div class="card-header">
-                <i class="bi bi-bookmarks m-1"></i>分类
-            </div>
             <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-bookmarks m-1"></i>分类</h5>
                 {% for category in site.categories %}
                 {% capture category_name %}{{ category | first }}{% endcapture %}
                     <a class="btn m-1" href="{{'/' | append:category_name | absolute_url }}/">
@@ -32,25 +30,23 @@ layout: default
                         {{ category_name }}
                         <span class="badge text-bg-danger">{{site.categories[category_name].size}}</span>
                     </a>
-                    {% unless forloop.last %},{% endunless %}
+                    {% unless forloop.last %}<div class="vr"></div>{% endunless %}
                 {% endfor %}
             </div>
         </div>
     </div>
     <div class="col">
         <div class="card">
-            <div class="card-header">
-                <i class="bi bi-tags m-1" aria-hidden="true"></i>标签
-            </div>
             <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-tags m-1" aria-hidden="true"></i>标签</h5>
                 {% for tag in site.tags %}
                 {% capture tag_name %}{{ tag | first }}{% endcapture %}
-                    <a class="btn m-1" href="{{'/' | append:tag_name | absolute_url }}/">
+                    <a class="btn btn-sm m-1" href="{{'/' | append:tag_name | absolute_url }}/">
                         <i class="bi bi-tag" aria-hidden="true"></i>
                         {{ tag_name }}
                         <span class="badge text-bg-danger">{{site.tags[tag_name].size}}</span>
                     </a>
-                    {% unless forloop.last %},{% endunless %}
+                    {% unless forloop.last %}<div class="vr"></div>{% endunless %}
                 {% endfor %}
             </div>
         </div>

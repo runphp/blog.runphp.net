@@ -91,16 +91,6 @@ $font-family-sans-serif:
   }
 }
 
-// navbar
-.nav-item {
-  a {
-    border-bottom: $border-width $border-style transparent;
-    &.active, &:hover {
-      border-bottom: $border-width $border-style $border-color;
-    }
-  }
-}
-
 // post
 .post {
   .post-content {

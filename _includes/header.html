@@ -19,7 +19,7 @@
                         data-bs-target="#offcanvasNavbar"></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-center flex-grow-1 gap-lg-3">
+                <ul class="navbar-nav nav-underline justify-content-center flex-grow-1 gap-lg-3">
                     {% for p in site.data.primary_nav %}
                     <li class="nav-item">
                         <a class="nav-link{%- if p.link == '/' %}{% if page.url == '/' %} active {% endif %}{% else %}{%- if page.url contains p.link %} active{% endif %}{% endif %}"
