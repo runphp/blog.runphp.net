@@ -5,6 +5,7 @@ description: >
   提供软件开发和技术咨询服务, PHP开发, Java开发, Go开发
 baseurl: ""
 url: "https://blog.runphp.net"
+repository: runphp/blog.runphp.net
 author: runphp
 wechat: runphp
 QQ: 83308224
