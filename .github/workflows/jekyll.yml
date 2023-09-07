@@ -54,7 +54,7 @@ jobs:
           # For jekyll-github-metadata
           JEKYLL_GITHUB_TOKEN: ${{ secrets.JEKYLL_GITHUB_TOKEN }}
           # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --verbose --trace
+        run: JEKYLL_GITHUB_TOKEN=$JEKYLL_GITHUB_TOKEN && bundle exec jekyll build --verbose --trace
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v2
