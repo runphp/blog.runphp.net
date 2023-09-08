@@ -22,19 +22,3 @@ toc: true
 我常使用的编程语言有[PHP]({{ '/php' | absolute_url }}), [Java], [Go]
 
 {% include_relative README.md %}
-
-## Github 所有项目
-
-<div class="list-group">
-{% for repository in site.github.public_repositories %}
-  <a href="{{ repository.html_url }}" class="list-group-item list-group-item-action" aria-current="true">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1 no_toc">{{ repository.name }}</h5>
-      <small>pushed at {{repository.pushed_at | date:"%Y-%m-%d %H:%M:%S"}}</small>
-    </div>
-    <p class="mb-1">{{ repository.description }}</p>
-    <small>language {{repository.language}}</small>
-  </a>
-{% endfor %}
-</div>
-
