@@ -1,7 +1,8 @@
 ---
 title: Jekyll github metadata 使用说明
 category: ruby
-tags: github-metadata, jekyll
+date: `2023-09-08 19:23:45`
+tags: github-metadata jekyll
 ---
 
 ### 安装
