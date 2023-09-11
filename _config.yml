@@ -24,6 +24,7 @@ kramdown:
 fenced_code_blocks: true
 exclude:
   - .idea
+  - js
 keep_files:
   - avatar
   - css/fonts
