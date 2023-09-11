@@ -5,6 +5,7 @@ module.exports = {
     mode: process.env.NODE_ENV,
     entry: {
         common: ['./js/common.js'],
+        anchor: ['./js/anchor.js'],
     },
     output: {
         filename: '[name].js',

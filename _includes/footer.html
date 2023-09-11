@@ -11,3 +11,7 @@
     </div>
 </footer>
 <script src="{{ "/dist/common.js" | prepend: site.baseurl }}"></script>
+
+{% if page.toc %}
+<script src="{{ "/dist/anchor.js" | prepend: site.baseurl }}"></script>
+{% endif %}
