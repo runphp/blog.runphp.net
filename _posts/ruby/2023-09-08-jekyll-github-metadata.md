@@ -75,5 +75,7 @@ $env:JEKYLL_GITHUB_TOKEN='github_pat_1XXXXXXXXXXXXXXXXX';  bundle exec jekyll s 
 在github actions 通过 secrets变量传递
 
 ```yml
+{% raw %}
  run: JEKYLL_GITHUB_TOKEN=${{ secrets.JEKYLL_GITHUB_TOKEN }} && bundle exec jekyll build --verbose --trace
+{% endraw %}
 ```
