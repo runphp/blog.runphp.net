@@ -18,7 +18,7 @@ layout: default
     {% endfor %}
 </ul>
 
-<div class="row mb-3 row-cols-lg-2 row-cols-1">
+<div class="row mb-3 row-cols-lg-2 row-cols-1 gy-3">
     <div class="col">
         <div class="card">
             <div class="card-body">
@@ -41,7 +41,7 @@ layout: default
                 <h5 class="card-title"><i class="bi bi-tags m-1" aria-hidden="true"></i>标签</h5>
                 {% for tag in site.tags %}
                 {% capture tag_name %}{{ tag | first }}{% endcapture %}
-                    <a class="btn btn-sm m-1" href="{{'/' | append:tag_name | absolute_url }}/">
+                    <a class="btn m-1" href="{{'/' | append:tag_name | absolute_url }}/">
                         <i class="bi bi-tag" aria-hidden="true"></i>
                         {{ tag_name }}
                         <span class="badge text-bg-danger">{{site.tags[tag_name].size}}</span>

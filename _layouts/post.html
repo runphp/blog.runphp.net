@@ -28,18 +28,7 @@ layout: default
     </header>
 
     <div class="post-content" itemprop="articleBody">
-        {% if page.toc %}
-        <div class="row">
-            <div class="toc sticky-lg-top col-lg-4 order-lg-1">
-                {{ content | toc_only }}
-            </div>
-            <div class="col-lg-8 order-lg-0" data-bs-spy="scroll" data-bs-target="#toc" data-bs-smooth-scroll="true" tabindex="0">
-                {{ content | inject_anchors }}
-            </div>
-        </div>
-        {% else %}
-        {{ content }}
-        {% endif %}
+        {% include content.html %}
     </div>
 
 </article>
