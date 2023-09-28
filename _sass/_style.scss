@@ -94,10 +94,14 @@ $font-family-sans-serif:
 // post
 .post {
   .post-content {
+    overflow-x: auto;
     blockquote {
       padding: 0 1em;
       color: $text-muted;
       border-left: $border-width $border-style $border-color;
+    }
+    table {
+      @extend .table, .table-striped, .table-bordered;
     }
   }
 }
@@ -120,7 +124,6 @@ $font-family-sans-serif:
     a {
       display: block;
       padding: $nav-link-padding-y $nav-link-padding-x;
-      color: $link-color;
       border-left: 2px $border-style $border-color;
     }
 

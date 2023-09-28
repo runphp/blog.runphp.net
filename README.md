@@ -3,9 +3,8 @@
 这个项目是我的个人博客，用于记录学习、工作、生活中的所见所思,
 使用Jekyll搭建，通过Github Actions进行部署，存储在Github pages
 
-> 访问地址: <https://blog.runphp.net>
-
-> 源代码: <https://github.com/runphp/blog.runphp.net>
+- 访问地址: <https://blog.runphp.net>
+- 源代码: <https://github.com/runphp/blog.runphp.net>
 
 ### 本地运行
 1. 确保已经安装Ruby和Nodejs
@@ -49,5 +48,3 @@
 | github-metadata | <https://github.com/jekyll/github-metadata> | Jekyll 插件，用于传播“site.github”命名空间并设置用于 GitHub 页面的默认值                                        |
 | webpack         | <https://webpack.js.org>                    | webpack是一个用于现代JavaScript应用程序的静态模块打包工具                                                     |
 | anchorjs        | <https://github.com/bryanbraun/anchorjs>    | Add deep anchor links to your docs                                                        |
-{: class="table table-bordered table-hover"}
-
