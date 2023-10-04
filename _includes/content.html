@@ -3,9 +3,11 @@
     <div class="toc sticky-lg-top col-lg-4 order-lg-1 z-2">
         {{ content | toc_only }}
     </div>
-    <div class="col-lg-8 order-lg-0 overflow-x-auto" data-bs-spy="scroll" data-bs-target="#toc" data-bs-smooth-scroll="true"
+    <div class="col-lg-8 order-lg-0" data-bs-spy="scroll" data-bs-target="#toc" data-bs-smooth-scroll="true"
          tabindex="0">
-        {{ content | inject_anchors }}
+        <div class="overflow-x-auto">
+            {{ content | inject_anchors }}
+        </div>
     </div>
 </div>
 {% else %}

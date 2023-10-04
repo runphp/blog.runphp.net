@@ -4,8 +4,9 @@ const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
     mode: process.env.NODE_ENV,
     entry: {
-        common: ['./js/common.js'],
         anchor: ['./js/anchor.js'],
+        color_modes: ['./js/color_modes.js'],
+        common: ['./js/common.js'],
     },
     output: {
         filename: '[name].js',
