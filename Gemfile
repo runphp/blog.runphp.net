@@ -2,7 +2,7 @@
 
 source "https://gems.ruby-china.com"
 
-gem "jekyll", "~> 4.3.2"
+gem "jekyll", "~> 4.4.1"
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
@@ -29,3 +29,7 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 # do not have a Java counterpart.
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 gem "faraday-retry", "~> 2.2"
+
+gem "bigdecimal"
+gem "logger"
+gem "ostruct"
