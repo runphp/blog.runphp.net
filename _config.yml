@@ -51,3 +51,14 @@ jekyll-archives:
   permalinks:
     category: :name/
     tag: :name/
+github:
+  token: "{{ env['JEKYLL_GITHUB_TOKEN'] }}"
+asciidoc: {}
+asciidoctor:
+  base_dir: :docdir
+  safe: unsafe
+  attributes:
+    icons: font
+    idseparator: _
+    stylesdir: css
+    source-highlighter: coderay

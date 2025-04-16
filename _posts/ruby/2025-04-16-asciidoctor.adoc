@@ -1,0 +1,381 @@
+= AsciiDoc 语法参考
+runphp
+:page-date:   2025-04-16 02:43:04 +0800
+:page-category: ruby
+:page-tags: [asciidoctor, mathjax]
+:page-toc: true
+:icons: font
+:stem:
+:url-docs: https://asciidoctor.org/docs
+:url-gem: https://rubygems.org/gems/asciidoctor
+
+AsciiDoc 最常用语法的简明参考手册。完整文档请访问 {url-docs}
+
+== 段落
+
+普通段落。
+换行不会被保留。
+// 行注释，以//开头的行会被忽略
+
+空行分隔段落。
+
+[%hardbreaks]
+添加 `hardbreaks` 标记的段落：
+换行会被保留。
+
+ An indented (literal) paragraph disables text formatting,
+ preserves spaces and line breaks, and is displayed in a
+ monospaced font.
+
+[sidebar#id.role]
+添加样式、ID或角色给段落（或块），例如这个侧边栏。
+
+NOTE: 重要提示，如本注释会吸引读者注意。
+
+TIP: 使用 `asciidoctor` 命令转换文档查看实际输出效果。
+
+WARNING: 警告段落，如本段提醒重要事项。
+
+CAUTION: 警示段落，如本段提醒潜在风险。
+
+IMPORTANT: 重要段落，如本段强调关键信息。
+
+== 文本格式
+:hardbreaks-option:
+
+.Constrained (applied at word boundaries)
+*strong importance* (aka bold)
+_stress emphasis_ (aka italic)
+`monospaced` (aka typewriter text)
+"`double`" and '`single`' typographic quotes
+"+passthrough text+" (substitutions disabled)
+`+literal text+` (monospaced with substitutions disabled)
+a #mark# to remember (highlighted for notation)
+
+.Unconstrained (applied anywhere)
+**C**reate, **R**ead, **U**pdate, and **D**elete (CRUD)
+fan__freakin__tastic
+``mono``culture
+##mark##up your text
+
+.Replacements
+A long time ago in a galaxy far, far away...
+(C) 1976 Arty Artisan
+I believe I shall--no, actually I won't.
+
+.ID and roles for phrases
+[.line-through]#delete me#
+the [.path]_images_ directory
+a [#wibble.term]*wibble* does wobble
+
+.Macros
+// where c=specialchars, q=quotes, a=attributes, r=replacements, m=macros, p=post_replacements, etc.
+The European icon:flag[role=blue] is blue & contains pass:[************] arranged in a icon:circle-o[role=yellow].
+The pass:c[->] operator is often referred to as the stabby lambda.
+Since `pass:[++]` has strong priority in AsciiDoc, you can rewrite pass:c,a,r[C++ => C{pp}].
+// 激活公式支持需在文档头添加 `:stem:`
+stem:[sqrt(4) = 2]
+
+:!hardbreaks-option:
+== 属性
+
+ // 在文档头定义属性；需顶格书写
+ :name: value
+
+您可从 {url-gem} 下载安装 Asciidoctor {asciidoctor-version}。
+C{pp} 不是必须的，仅需 Ruby。
+使用反斜杠输出带大括号的文本，如 \{name}。
+
+== 链接
+
+[%hardbreaks]
+https://example.org/page[网页链接]
+link:../16/asciidoctor.html[本地文件]
+xref:asciidoctor.adoc[同级文档]
+mailto:hello@example.org[发送问候邮件]
+
+== 锚点
+
+[[idname,reference text]]
+// 或使用标准块属性 `[#idname,reftext=reference text]`
+带有锚点（ID）和引用文本的段落。
+
+参见 <<idname>> 或 <<idname,自定义链接文本>>。
+
+xref:asciidoctor.adoc#idname[跳转到其他文档锚点]。
+
+此段包含脚注.footnote:[这是脚注文本.]
+
+== 列表
+
+=== 无序列表
+
+* 第一级
+** 第二级
+*** 第三级
+**** 第四级
+***** 更多层级
+* 返回第一级
++
+使用列表续行符或开放块附加内容块
+
+.Some Authors
+[circle]
+- Edgar Allan Poe
+- Sheri S. Tepper
+- Bill Bryson
+
+=== 有序列表
+
+. 第一步
+. 第二步
+.. 第二步A
+.. 第二步B
+. 第三步
+
+.Remember your Roman numerals?
+[upperroman]
+. 是一
+. 是二
+. 是三
+
+=== 任务清单
+
+* [x] 已选中
+* [ ] 未选中
+
+=== 代码标注
+
+// 需在文档头添加 `:icons: font` 启用标注
+[,ruby]
+----
+puts 'Hello, World!' # <1>
+----
+<1> 向控制台输出 `Hello, World!`
+
+=== 描述列表
+
+first term:: 第一个术语描述
+second term::
+第二个术语描述
+
+== 文档结构
+
+=== 文档头
+
+ // 需顶格书写
+ = 文档标题
+ 作者姓名 <author@example.org>
+ v1.0, 2019-01-01
+
+=== 章节
+
+ // 需顶格书写
+ = 标题（0级）
+ == 一级标题
+ === 二级标题
+ ==== 三级标题
+ ===== 四级标题
+ ====== 五级标题
+ == 返回一级标题
+
+=== 内容包含
+
+ // 需顶格书写
+ include::basics.adoc[]
+
+ // 需添加 `-a allow-uri-read` 参数允许URI内容
+ include::https://example.org/installation.adoc[]
+
+== 块元素
+
+--
+开放块 - 内容容器；可用于附加列表项
+--
+
+// 支持类型：CAUTION,IMPORTANT,NOTE,TIP,WARNING
+// 需在文档头添加 `:icons: font` 启用图标
+[NOTE]
+====
+提示块 - 给读者的重要提示
+====
+
+====
+示例块 - 概念演示
+====
+
+.Toggle Me
+[%collapsible]
+====
+可折叠块 - 点击标题展开内容
+====
+
+****
+侧边栏 - 可独立阅读的辅助内容
+****
+
+....
+字面块 - 展示程序输出
+....
+
+----
+列表块 - 展示程序输入/源码/文件内容
+----
+
+[,language]
+----
+源码块 - 可语法高亮（需指定语言）
+----
+
+```language
+fenced code - 语法高亮的源码块
+```
+
+[,attribution,citetitle]
+____
+引用块 - 引用或摘录；来源和标题可选
+____
+
+[verse,attribution,citetitle]
+____
+诗歌块 - 文学摘录，通常是诗歌；来源和标题可选
+____
+
+++++
+通过块 - 内容直接输出；通常是HTML
+++++
+
+// 激活公式支持需在文档头添加 `:stem:`
+[stem]
+++++
+x = y^2
+++++
+
+////
+注释块 - 内容不会输出
+////
+
+== 表格
+
+.Table Attributes
+[cols=>1h;2d,width=50%,frame=ends]
+|===
+| Attribute Name | Values
+
+| options
+| header,footer,autowidth
+
+| cols
+| colspec[;colspec;...]
+
+| grid
+| all \| cols \| rows \| none
+
+| frame
+| all \| sides \| ends \| none
+
+| stripes
+| all \| even \| odd \| none
+
+| width
+| (0%..100%)
+
+| format
+| psv {vbar} csv {vbar} dsv
+|===
+
+== 断行
+
+// thematic break (aka horizontal rule)
+---
+
+// page break
+<<<
+
+== https://www.mathjax.org[MathJax]
+
+image:https://www.mathjax.org/badge/mj_logo.png[mj_logo.png]
+
+=== The Lorenz Equations
+
+[stem]
+\begin{align}
+\dot{x} & = \sigma(y - x) \\
+\dot{y} & = \rho x - y - xz \\
+\dot{z} & = -\beta z + xy
+\end{align}
+
+
+=== The Cauchy-Schwarz Inequality
+
+[stem]
+\[
+\left( \sum_{k=1}^n a_k b_k \right)^{\!\!2} \leq
+\left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+\]
+
+
+=== A Cross Product Formula
+
+[stem]
+\[
+\mathbf{V}_1 \times \mathbf{V}_2 =
+\begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+\frac{\partial X}{\partial u} & \frac{\partial Y}{\partial u} & 0 \\
+\frac{\partial X}{\partial v} & \frac{\partial Y}{\partial v} & 0 \\
+\end{vmatrix}
+\]
+
+
+=== The probability of getting \(k\) heads when flipping \(n\) coins is:
+
+[stem]
+\[P(E) = {n \choose k} p^k (1-p)^{ n-k} \]
+
+=== An Identity of Ramanujan
+
+[stem]
+\[
+\frac{1}{(\sqrt{\phi \sqrt{5}}-\phi) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } }
+\]
+
+=== A Rogers-Ramanujan Identity
+[stem]
+\[
+1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+\prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+\quad\quad \text{for $|q|<1$}.
+\]
+
+
+=== Maxwell's Equations
+
+[stem]
+\begin{align}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\
+\nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} & = 0
+\end{align}
+
+=== In-line Mathematics
+
+Finally, while display equations look good for a page of samples, the ability to mix math and text in a paragraph is also important. This expression stem:[\sqrt{3x-1}+(1+x)^2] is an example of an inline equation. As you see, MathJax equations can be used this way as well, without unduly disturbing the spacing between lines.
+
+=== An Example Diagram
+[ditaa]
+----
+                  +-------------+
+                  | asciidoctor |---------------+
+                  |  diagram    |               |
+                  +-------------+               | image
+                         ^                      |
+                         | diagram source       |
+                         |                      v
+ +--------+       +------+------+        /--------------\
+ |  adoc  |------>+ asciidoctor +------->| HTML + image |
+ +--------+       +-------------+  html  \--------------/
+----

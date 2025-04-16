@@ -10,7 +10,23 @@
         </div>
     </div>
 </footer>
-<script src="{{ "/dist/common.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/dist/js/common.js" | prepend: site.baseurl }}"></script>
 {% if page.toc %}
-<script src="{{ "/dist/anchor.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/dist/js/anchor.js" | prepend: site.baseurl }}"></script>
 {% endif %}
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      messageStyle: "none",
+      tex2jax: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        ignoreClass: "nostem|nolatexmath"
+      },
+      asciimath2jax: {
+        delimiters: [["\\$", "\\$"]],
+        ignoreClass: "nostem|noasciimath"
+      },
+      TeX: { equationNumbers: { autoNumber: "none" } }
+    });
+</script>
+<script src="/dist/mathjax/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>

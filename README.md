@@ -8,7 +8,7 @@
 
 ### 本地运行
 1. 确保已经安装Ruby和Nodejs
-2. 运行`npm install` 安装前端依赖包
+2. 运行`npm install && npm run build-prod` 安装前端依赖包生成静态资源
 3. 运行`bundle install` 安装Jekyll以及依赖插件
 4. 运行`bundle exec jekyll s` 启动web服务
 5. 访问`http://localhost:4000` 访问网站

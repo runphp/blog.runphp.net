@@ -7,7 +7,7 @@ tags: jekyll bootstrap bootstrap-icons
 
 Jekyll用了bootstrap-icons样式往往找不到字体文件，可以自定义字体文件路径
 ```scss
-$bootstrap-icons-font-dir: "/dist/fonts";
+$bootstrap-icons-font-dir: "/assets/fonts";
 ```
 
 webpack安装`copy-webpack-plugin`

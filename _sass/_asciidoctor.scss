@@ -1,0 +1,158 @@
+.post-content {
+  // 基础文本样式（参考 asciidoctor-default.css）
+  p {
+    line-height: 1.7;
+    color: $secondary;
+    font-size: 0.9rem;
+  }
+
+  // admonition 块样式（参考 asciidoctor-default.css）
+  .admonitionblock {
+    border: 1px solid $secondary;
+    border-radius: $border-radius;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+
+    &.note {
+      border-color: #75507b;
+      background-color: #f5e7fa;
+    }
+
+    &.tip {
+      border-color: #2e86c1;
+      background-color: #e0f7fa;
+    }
+
+    &.important {
+      border-color: #d44425;
+      background-color: #feebeb;
+    }
+
+    .icon {
+      font-size: 1.25rem;
+      margin-right: 1rem;
+      color: lighten($body-bg, 20%);
+    }
+
+    .content {
+      padding-left: 2rem;
+    }
+
+    td.icon {
+      .fa {
+        font-family: "bootstrap-icons" !important;
+        font-style: normal;
+        font-weight: normal;
+        speak: none;
+        display: inline-block;
+        text-decoration: inherit;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .icon-note::before { content: "\f333"; color: #19407c; }
+      .icon-tip::before { content: "\f46b"; color: #111; }
+      .icon-warning::before { content: "\f33a"; color: #bf6900; }
+      .icon-caution::before { content: "\F336"; color: #bf3400; }
+      .icon-important::before { content: "\f332"; color: #bf0000; }
+    }
+  }
+
+  // 描述列表样式（参考 asciidoctor-default.css）
+  .dlist {
+    dl {
+      dt {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: $secondary;
+      }
+
+      dd {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+        color: $text-muted;
+      }
+    }
+  }
+
+  // 表格样式（参考 asciidoctor-default.css）
+  .tableblock {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.75rem;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #f8f9fa;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  }
+
+  .sidebarblock {
+    background-color: #f8f9fa;
+    padding: 1.25rem;
+    border-radius: $border-radius;
+    margin-bottom: 1.5rem;
+
+    h3 {
+      margin-top: 0;
+      color: $primary;
+    }
+
+    .content {
+      padding-left: 2rem;
+    }
+  }
+
+  // 列表样式（参考 asciidoctor-default.css）
+  .ulist {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+
+    &.checklist {
+      list-style-type: none;
+
+      li {
+        position: relative;
+        padding-left: 2rem;
+
+        &:before {
+          content: "\2714";
+          position: absolute;
+          left: 0;
+          color: #2e86c1;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  // 脚注样式（参考 asciidoctor-default.css）
+  #footnotes {
+    font-size: 0.875rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    margin-top: 2rem;
+
+    .footnote {
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+      text-indent: -1rem;
+    }
+  }
+  .mark {
+    background-color: #fff3cd;
+    padding: 2px 4px;
+    border-radius: $border-radius;
+    font-weight: bold;
+  }
+}

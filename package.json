@@ -10,7 +10,8 @@
     "anchor-js": "^5.0.0",
     "bootstrap": "^5.3.5",
     "bootstrap-icons": "^1.11.3",
-    "gitalk": "^1.8.0"
+    "gitalk": "^1.8.0",
+    "mathjax": "^2.7.9"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^13.0.0",

@@ -83,6 +83,8 @@ $font-family-sans-serif:
 //
 @import "bootstrap-icons/font/bootstrap-icons";
 @import "syntax/syntax";
+@import "asciidoctor";
+@import "toc";
 
 // logo
 .logo:hover {
@@ -104,35 +106,6 @@ $font-family-sans-serif:
     }
   }
 }
-
-// table of contents
-.toc {
-  top: 4rem;
-  @media (min-width: 992px) {
-    height: calc(100vh - 7rem);
-    overflow-y: auto;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  li {
-    @extend .justify-content-between, .text-truncate;
-
-    a {
-      display: block;
-      padding: $nav-link-padding-y $nav-link-padding-x;
-      border-left: 2px $border-style $border-color;
-    }
-
-    a:hover, a.active {
-      color: $nav-link-hover-color;
-      border-left: 2px $border-style $link-hover-color;
-    }
-  }
-}
-
 
 // color mode
 .color-modes {
