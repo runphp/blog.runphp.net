@@ -76,7 +76,8 @@
 
   // 表格样式（参考 asciidoctor-default.css）
   .tableblock {
-    width: 100%;
+   /*  width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     margin-bottom: 1.5rem;
 
@@ -94,7 +95,7 @@
 
     tr:nth-child(even) {
       background-color: #f2f2f2;
-    }
+    } */
   }
 
   .sidebarblock {
