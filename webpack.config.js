@@ -1,6 +1,6 @@
 const path = require('path');
 const CopyPlugin = require("copy-webpack-plugin");
-
+const TerserPlugin = require('terser-webpack-plugin');
 module.exports = {
     mode: process.env.NODE_ENV,
     entry: {
@@ -21,4 +21,11 @@ module.exports = {
             ],
         }),
     ],
+    optimization: {
+        minimizer: [
+            new TerserPlugin({
+                exclude: /mathjax/, // 排除 mathjax 文件，使其不被压缩
+            }),
+        ],
+    },
 };
