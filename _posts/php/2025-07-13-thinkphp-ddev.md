@@ -25,7 +25,7 @@ tags: ddev thinkphp
 
 根据自己项目需要配置php版本、数据库版本、上传目录等。
 
-后面在修改也只需要用`ddev config`命令执行修改即可。记得执行`ddev restart`重启服务。
+后面再修改也只需要用`ddev config`命令执行修改即可。记得执行`ddev restart`重启服务。
 ```shell
 
 ddev config --docroot=backend/public --project-type=php --composer-root=backend --php-version=8.2 \
@@ -75,3 +75,33 @@ $response->send();
 $app->http->end($response);
 ```
 命令行的`think`命令修改也类似，用`$app->setEnvName($env)`设置环境变量。
+
+## 修改nginx配置
+
+修改nginx配置文件`.ddev/nginx_full/nginx-site.conf`，修改如下
+```nginx
+location / {
+        absolute_redirect off;
+        # try_files $uri $uri/ /index.php?$query_string;
+        if (!-e $request_filename){
+           rewrite  ^(.*)$  /index.php?s=$1  last;   break;
+        }
+    }
+```
+记得删除掉`#ddev-generated`注释，不然重启会还原。
+
+## 添加xdebug配置
+
+添加配置文件`.ddev/php/sixshop.ini`，添加如下配置
+```ini
+[XDEBUG]
+xdebug.mode=develop,debug,coverage
+xdebug.start_with_request=yes
+xdebug.discover_client_host=0
+xdebug.client_host=host.docker.internal
+xdebug.idekey = vsc
+xdebug.client_port="9003"
+xdebug.log = "/var/www/html/backend/runtime/xdebug.log"
+```
+
+记得debug时idekey使用`xdebug.idekey`配置的值, 我配置的是`vsc`，相同才能在你的IDE中正确识别xdebug。
