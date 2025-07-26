@@ -92,7 +92,7 @@ location / {
 
 ## 添加xdebug配置
 
-添加配置文件`.ddev/php/sixshop.ini`，添加如下配置
+添加配置文件`.ddev/php/xdebug.ini`，添加如下配置
 ```ini
 [XDEBUG]
 xdebug.mode=develop,debug,coverage
@@ -105,3 +105,21 @@ xdebug.log = "/var/www/html/backend/runtime/xdebug.log"
 ```
 
 记得debug时idekey使用`xdebug.idekey`配置的值, 我配置的是`vsc`，相同才能在你的IDE中正确识别xdebug。
+
+## 添加php扩展
+
+比如gmp扩展，在 `.ddev/config.yaml` 添加重启即可
+```yaml
+webimage_extra_packages: ["php${DDEV_PHP_VERSION}-gmp"]
+```
+
+## 通过XHGui启用xhprof
+
+先修改配置
+`ddev config global --xhprof-mode=xhgui && ddev restart`
+
+开启
+`ddev xhgui on`
+
+查看
+`ddev xhgui`
